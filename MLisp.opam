@@ -1,0 +1,19 @@
+opam-version: "2.0"
+synopsis: "MLisp: a minimal lis.py implementation embedded in OCaml"
+version: "1.0"
+maintainer: "sk4gz@virginia.edu"
+authors: ["Samarth Kishor"]
+homepage: "https://github.com/samarthkishor/MLisp-solution"
+bug-reports: "https://github.com/samarthkishor/MLisp-solution/issues"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
+depends: [
+  "dune" { >= "2.0.0"}
+  "qcheck" {= "0.15"}
+  "qcheck-alcotest" {= "0.15"}
+  "alcotest"  {= "1.2.3"}
+  "ocamlformat" {="0.15.0"}
+  "bisect_ppx" {= "2.5.0"}
+  "pyml" {= "20200518"}
+]

@@ -1,0 +1,5 @@
+(include_subdirs unqualified)
+
+(test
+ (name generated_tests)
+ (libraries MLisp alcotest qcheck qcheck-alcotest))

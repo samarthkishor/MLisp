@@ -1,0 +1,4 @@
+(library
+ (name MLisp)
+ (preprocess
+  (pps bisect_ppx --conditional)))
