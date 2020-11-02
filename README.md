@@ -1,4 +1,4 @@
-# MLisp (Solution)
+# MLisp
 
 ## Introduction
 
