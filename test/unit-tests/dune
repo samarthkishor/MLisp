@@ -1,5 +1,0 @@
-(include_subdirs unqualified)
-
-(test
- (name unit_tests)
- (libraries MLisp alcotest))

@@ -1,3 +1,0 @@
-(test
- (name diff_tests)
- (libraries MLisp alcotest qcheck qcheck-alcotest pyml))
