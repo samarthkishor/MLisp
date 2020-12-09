@@ -197,54 +197,54 @@ let rec eval env = function
  *  List [Symbol "apply"; Symbol "+"; List [Symbol "list"; Int 1L; Int 2L]]
  *  is interpreted as
  *  List [Symbol "+"; Int 1L; Int 2L] *)
-let apply_fun = raise Not_implemented
+let apply_fun () = raise Not_implemented
 
 (* TODO (#2) Implement append:
  *   NOTE (lis.py's append function is Python's + operator
  *        which works for lists, strings, and numbers) *)
-let append_fun = raise Not_implemented
+let append_fun () = raise Not_implemented
 
 (* TODO (#2) Implement car:
  *   NOTE raise an error if calling car on an empty list *)
-let car_fun = raise Not_implemented
+let car_fun () = raise Not_implemented
 
 (* TODO (#2) Implement cdr:
  *   NOTE return an empty list if calling cdr on an empty list *)
-let cdr_fun = raise Not_implemented
+let cdr_fun () = raise Not_implemented
 
 (* TODO (#2) Implement cons: *)
-let cons_fun = raise Not_implemented
+let cons_fun () = raise Not_implemented
 
 (* TODO (#2) Implement expt: *)
-let expt_fun = raise Not_implemented
+let expt_fun () = raise Not_implemented
 
 (* TODO (#2) Implement length: *)
-let length_fun = raise Not_implemented
+let length_fun () = raise Not_implemented
 
 (* TODO (#2) Implement list?: *)
-let is_list_fun = raise Not_implemented
+let is_list_fun () = raise Not_implemented
 
 (* TODO (#2) Implement map: *)
-let map_fun = raise Not_implemented
+let map_fun () = raise Not_implemented
 
 (* TODO (#2) Implement max: *)
-let max_fun = raise Not_implemented
+let max_fun () = raise Not_implemented
 
 (* TODO (#2) Implement min: *)
-let min_fun = raise Not_implemented
+let min_fun () = raise Not_implemented
 
 let not_fun = function
   | [ Type.Bool b ] -> Type.Bool (not b)
   | _ -> raise (Runtime_error "Invalid argument(s): expected boolean")
 
 (* TODO (#2) Implement null?: *)
-let is_null_fun = raise Not_implemented
+let is_null_fun () = raise Not_implemented
 
 (* TODO (#2) Implement number?: *)
-let is_number_fun = raise Not_implemented
+let is_number_fun () = raise Not_implemented
 
 (* TODO (#2) Implement procedure?  (hint: Type.Fun is the only type of procedure in MLisp): *)
-let is_procedure_fun = raise Not_implemented
+let is_procedure_fun () = raise Not_implemented
 
 let is_symbol_fun = function
   | [ Type.Symbol _ ] -> Type.Bool true
@@ -314,7 +314,7 @@ let print_fun = function
   | _ -> raise (Runtime_error "Invalid argument(s): expected 1 expression")
 
 (* TODO (#5) Implment round: *)
-let round_fun = raise Not_implemented
+let round_fun () = raise Not_implemented
 
 (* global environment *)
 let global_env =
@@ -329,26 +329,26 @@ let global_env =
       ("<", Type.Fun lt_fun);
       (">=", Type.Fun ge_fun);
       ("<=", Type.Fun le_fun);
-      ("append", Type.Fun append_fun);
-      ("apply", Type.Fun apply_fun);
+      (* ("append", Type.Fun append_fun); *)
+      (* ("apply", Type.Fun apply_fun); *)
       ("begin", Type.Fun (fun args -> List.hd (List.rev args)));
-      ("car", Type.Fun car_fun);
-      ("cdr", Type.Fun cdr_fun);
-      ("cons", Type.Fun cons_fun);
-      ("eq?", Type.Fun eq_fun);
-      ("expt", Type.Fun expt_fun);
-      ("equal?", Type.Fun equal_fun);
-      ("length", Type.Fun length_fun);
+      (* ("car", Type.Fun car_fun); *)
+      (* ("cdr", Type.Fun cdr_fun); *)
+      (* ("cons", Type.Fun cons_fun); *)
+      (* ("eq?", Type.Fun eq_fun); *)
+      (* ("expt", Type.Fun expt_fun); *)
+      (* ("equal?", Type.Fun equal_fun); *)
+      (* ("length", Type.Fun length_fun); *)
       ("list", Type.Fun (fun args -> List args));
-      ("list?", Type.Fun is_list_fun);
-      ("map", Type.Fun map_fun);
-      ("max", Type.Fun max_fun);
-      ("min", Type.Fun min_fun);
-      ("not", Type.Fun not_fun);
-      ("null?", Type.Fun is_null_fun);
-      ("number?", Type.Fun is_number_fun);
+      (* ("list?", Type.Fun is_list_fun); *)
+      (* ("map", Type.Fun map_fun); *)
+      (* ("max", Type.Fun max_fun); *)
+      (* ("min", Type.Fun min_fun); *)
+      (* ("not", Type.Fun not_fun); *)
+      (* ("null?", Type.Fun is_null_fun); *)
+      (* ("number?", Type.Fun is_number_fun); *)
       ("print", Type.Fun print_fun);
-      ("procedure?", Type.Fun is_procedure_fun);
+      (* ("procedure?", Type.Fun is_procedure_fun); *)
       ("symbol?", Type.Fun is_symbol_fun);
-      ("round", Type.Fun round_fun);
+      (* ("round", Type.Fun round_fun); *)
     ]
